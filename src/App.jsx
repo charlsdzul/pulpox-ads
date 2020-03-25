@@ -18,7 +18,7 @@ const App = () => {
   };
 
   return (
-    <h1>HOLA!</h1>
+    <h1>HOLA charlssssssss ya quedó: {5 + 5 + 100}</h1>
 
     /* <body onLoad={setSectionHeight()}>
       <Provider store={store}>

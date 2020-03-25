@@ -1,35 +1,20 @@
-const webpack = require("webpack");
-const path = require("path");
-
 module.exports = {
-  entry: "./src/index.js",
+  entry: "./src/index.jsx",
+  output: {
+    path: __dirname + "/public/js/",
+    filename: "bundle.js",
+    publicPath: "/"
+  },
+
   module: {
     rules: [
       {
-        test: /\.js$/,
+        test: /\.(js|jsx)$/,
         exclude: /node_modules/,
-        loader: "babel-loader",
-        options: {
-          presets: ["env", "react"]
+        use: {
+          loader: "babel-loader"
         }
-      },
-      {
-        test: /\.css$/,
-        use: ["style-loader", "css-loader"]
       }
     ]
-  },
-  resolve: {
-    extensions: ["*", ".js"]
-  },
-  output: {
-    publicPath: path.resolve(__dirname, "build/"),
-    filename: "build.js"
-  },
-  devServer: {
-    contentBase: path.join(__dirname, "public"),
-    port: 9000,
-    publicPath: "http://localhost:9000/build"
-  },
-  plugins: [new webpack.HotModuleReplacementPlugin()]
+  }
 };
