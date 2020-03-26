@@ -1,0 +1,71 @@
+@import "../base/colors.scss";
+@import "../base/config.scss";
+@import "../organisms/header";
+@import "./titulo-pages.scss";
+
+.anuncio-guardado-div {
+  /*background-color: pink;*/
+  width: 100%;
+}
+
+.anuncio-guardado-div__nuevo {
+  /* border: 1px solid orange;*/
+  width: 100%;
+  margin: auto;
+  margin-top: 1em;
+}
+
+.anuncio-guardado-div__titulo {
+  max-width: 40em;
+  height: auto;
+  margin: auto;
+  margin-top: 0.5em;
+}
+
+.anuncio-guardado-div__mensaje {
+  max-width: 40em;
+  min-height: 20em;
+  height: auto;
+  margin: auto;
+  margin-top: 0.5em;
+  border: 1px solid lightgrey;
+  border-radius: $border_radius;
+  padding: 0.3em;
+}
+
+.anuncio-guardado-div__datos {
+  max-width: 40em;
+  width: 100%;
+  height: auto;
+  margin: auto;
+  margin-top: 0.5em;
+  // display: flex;
+  //justify-content: space-between;
+}
+
+.anuncio-guardado-div__datos--dato {
+}
+
+.div-buttons {
+  max-width: 40em;
+  height: auto;
+  margin: auto;
+  margin-top: 0.5em;
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+.div-buttons__button {
+  background-color: $color_cherry;
+  border-radius: $border_radius;
+  border-style: none;
+  color: white;
+  width: 6em;
+}
+
+.anuncio-guardado-div__span {
+  font-size: 1em;
+  color: gray;
+  font-style: italic;
+}

@@ -5,6 +5,7 @@ module.exports = {
     filename: "bundle.js",
     publicPath: "/"
   },
+  resolve: { extensions: [".js", ".jsx", ".scss"] },
 
   module: {
     rules: [
@@ -14,6 +15,23 @@ module.exports = {
         use: {
           loader: "babel-loader"
         }
+      },
+      {
+        test: /\.css$/i,
+        use: ["style-loader", "css-loader"]
+      },
+      {
+        test: /\.scss$/i,
+        use: [
+          "style-loader",
+          "css-loader",
+          {
+            loader: "sass-loader",
+            options: {
+              implementation: require("node-sass")
+            }
+          }
+        ]
       }
     ]
   }

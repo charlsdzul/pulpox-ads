@@ -1,0 +1,71 @@
+@import "../base/colors.scss";
+@import "../base/config.scss";
+
+.header {
+  background-color: $color_cherry;
+}
+
+.navbar {
+  margin-left: 2em;
+  margin-right: 2em;
+}
+
+.header-banner {
+}
+
+.header-banner__logo {
+  color: white;
+}
+
+.header-main__banner__logo span {
+}
+
+.header-menu {
+  margin-left: 5em;
+  width: auto;
+  font-style: normal;
+  font-family: "Lato", sans-serif;
+  display: flex;
+  justify-content: flex-end;
+}
+
+.header-menu__group {
+  text-align: right;
+}
+
+.header-menu__li {
+  border-radius: $border-radius;
+  width: auto;
+  color: white;
+}
+.header-menu__li--hover {
+  &:hover {
+    background-color: $color-orange;
+  }
+}
+.header-menu__button {
+  background-color: $color_cherry;
+  border-style: none;
+  border-radius: $border-radius;
+}
+
+.header-menu__a {
+}
+
+.header-menu__a--hover {
+  &:hover {
+  }
+}
+
+.header-menu__submenu {
+  background-color: $color-orange;
+}
+
+.header-menu__submenu__a {
+  color: white;
+}
+.header-menu__submenu__a--hover {
+  &:hover {
+    color: $color-orange;
+  }
+}

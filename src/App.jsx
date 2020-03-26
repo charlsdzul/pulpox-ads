@@ -1,15 +1,15 @@
 import React from "react";
-//import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
-//import HomePage from "./views/components/05_pages/HomePage";
-//import MisAnunciosPage from "./views/components/05_pages/MisAnunciosPage";
-//import NuevoAnuncioPage from "./views/components/05_pages/NuevoAnuncioPage";
-//import NuevoAnuncioGuardadoPage from "./views/components/05_pages/NuevoAnuncioGuardadoPage";
+import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
+import HomePage from "./views/components/05_pages/HomePage";
+import MisAnunciosPage from "./views/components/05_pages/MisAnunciosPage";
+import NuevoAnuncioPage from "./views/components/05_pages/NuevoAnuncioPage";
+import NuevoAnuncioGuardadoPage from "./views/components/05_pages/NuevoAnuncioGuardadoPage";
 
-//import "./views/scss/base/config.scss";
-//import Header from "./views/components/03_organisms/Header";
-//import { Provider } from "react-redux";
-//import store from "./views/components/reduxAnuncio/store";
-//import Footer from "./views/components/03_organisms/Footer";
+import "./views/scss/base/config.scss";
+import Header from "./views/components/03_organisms/Header";
+import { Provider } from "react-redux";
+import store from "./views/components/reduxAnuncio/store";
+import Footer from "./views/components/03_organisms/Footer";
 const App = () => {
   const setSectionHeight = () => event => {
     var h = window.innerHeight;
@@ -18,9 +18,9 @@ const App = () => {
   };
 
   return (
-    <h1>HOLA charlssssssss ya quedó: {5 + 5 + 100000}</h1>
-
-    /* <body onLoad={setSectionHeight()}>
+    <body onLoad={setSectionHeight()}>
+      {" "}
+      <h1>HOLA charlssssssss ya quedó: {5 + 5 + 100000}</h1>
       <Provider store={store}>
         <Router>
           <Header />
@@ -37,7 +37,7 @@ const App = () => {
           <Footer />
         </Router>
       </Provider>
-    </body>*/
+    </body>
   );
 };
 
