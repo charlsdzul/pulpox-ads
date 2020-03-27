@@ -1,5 +1,6 @@
 import React from "react";
 import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
+
 import HomePage from "./views/components/05_pages/HomePage";
 import MisAnunciosPage from "./views/components/05_pages/MisAnunciosPage";
 import NuevoAnuncioPage from "./views/components/05_pages/NuevoAnuncioPage";
@@ -19,8 +20,6 @@ const App = () => {
 
   return (
     <body onLoad={setSectionHeight()}>
-      {" "}
-      <h1>HOLA charlssssssss ya quedó: {5 + 5 + 100000}</h1>
       <Provider store={store}>
         <Router>
           <Header />

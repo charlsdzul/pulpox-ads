@@ -5,7 +5,7 @@ module.exports = {
     filename: "bundle.js",
     publicPath: "/"
   },
-  resolve: { extensions: [".js", ".jsx", ".scss"] },
+  resolve: { extensions: ["*", ".js", ".jsx", ".scss"] },
 
   module: {
     rules: [
@@ -13,7 +13,8 @@ module.exports = {
         test: /\.(js|jsx)$/,
         exclude: /node_modules/,
         use: {
-          loader: "babel-loader"
+          loader: "babel-loader",
+          options: { presets: ["@babel/preset-env"] }
         }
       },
       {
@@ -34,5 +35,8 @@ module.exports = {
         ]
       }
     ]
+  },
+  devServer: {
+    historyApiFallback: true
   }
 };
