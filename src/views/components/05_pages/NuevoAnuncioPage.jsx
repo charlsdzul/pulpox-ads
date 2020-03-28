@@ -9,7 +9,6 @@ const NuevoAnuncioPage = () => {
         <span> Crea tu anuncio </span>
       </div>
       <NuevoAnuncioSection />
-      <NuevoAnuncioSection />
     </main>
   );
 };

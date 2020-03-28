@@ -1,7 +1,11 @@
 import React from "react";
 import { Link } from "react-router-dom";
 
-const AnuncioBoton = ({ path, nameButton, icon }) => {
+const AnuncioBoton = ({ path, nameButton, icon, dataButton }) => {
+  const saveAd = () => {
+    alert("Evento Publicar");
+  };
+
   return (
     <Link to={path}>
       <button
@@ -9,6 +13,7 @@ const AnuncioBoton = ({ path, nameButton, icon }) => {
         size="small"
         className="div-buttons__button"
         id="button-guardar"
+        onClick={saveAd}
       >
         {icon}
         {nameButton}

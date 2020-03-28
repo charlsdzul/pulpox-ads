@@ -27,6 +27,18 @@ const AnuncioGuardado = ({
     correoStore = "Correo: " + correoStore;
   }
 
+  const dataButton = {
+    telefono: telefonoStore,
+    celular: celularStore,
+    correo: correoStore,
+    titulo: tituloStore,
+    mensaje: mensajeStore,
+    estado: estadoTextInStore,
+    ciudad: ciudadTextInStore,
+    seccion: seccionTextInStore,
+    apartado: apartadoTextInStore
+  };
+
   const datos =
     estadoTextInStore +
     " > " +
@@ -76,11 +88,13 @@ const AnuncioGuardado = ({
           path={"/anuncio-nuevo"}
           nameButton={"Editar"}
           icon={<EditIcon />}
+          data={""}
         ></AnuncioBoton>
         <AnuncioBoton
           path={"/anuncio-publicado"}
           nameButton={"Publicar"}
           icon={<PublishIcon />}
+          data={dataButton}
         ></AnuncioBoton>
       </div>
     </div>
