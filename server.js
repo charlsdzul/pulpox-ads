@@ -1,4 +1,3 @@
-//import HomePage from "./src/views/components/05_pages/HomePage";
 const express = require("express");
 const path = require("path");
 const session = require("express-session");

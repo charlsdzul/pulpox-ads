@@ -2,6 +2,7 @@ import React from "react";
 import FormularioAnuncio from "../02_molecules/FormularioAnuncio";
 import FormularioDatos from "../02_molecules/FormularioDatos";
 import FormularioInputs from "../02_molecules/FormularioInputs";
+import FormularioImagenes from "../02_molecules/FormularioImagenes";
 import SaveIcon from "@material-ui/icons/Save";
 import AnuncioBoton from "../01_atoms/AnuncioBoton";
 
@@ -11,6 +12,7 @@ const NuevoAnuncio = () => {
       <FormularioAnuncio />
       <FormularioDatos />
       <FormularioInputs />
+      <FormularioImagenes />
       <div className="div-buttons">
         <AnuncioBoton
           path={"/anuncio-guardado"}
