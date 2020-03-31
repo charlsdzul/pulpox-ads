@@ -1,6 +1,5 @@
 # pulpox-ads
-Pulpox Ads: Portal de anuncios clasificados
-Uso de:
+Pulpox Ads: Portal de anuncios clasificados. Uso de:
 
 • React.js
 • Material-UI
