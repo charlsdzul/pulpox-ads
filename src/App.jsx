@@ -6,7 +6,7 @@ import MisAnunciosPage from "./views/components/05_pages/MisAnunciosPage";
 import NuevoAnuncioPage from "./views/components/05_pages/NuevoAnuncioPage";
 import NuevoAnuncioGuardadoPage from "./views/components/05_pages/NuevoAnuncioGuardadoPage";
 
-import "./views/scss/base/config.scss";
+//import "./views/scss/base/config.scss";
 import Header from "./views/components/03_organisms/Header";
 import { Provider } from "react-redux";
 import store from "./views/components/reduxAnuncio/store";

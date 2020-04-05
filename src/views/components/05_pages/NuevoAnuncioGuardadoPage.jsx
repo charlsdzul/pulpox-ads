@@ -1,6 +1,6 @@
 import React from "react";
 import NuevoAnuncioGuardadoSection from "../04_templates/NuevoAnuncioGuardadoSection";
-import "../../scss/pages/anuncio-guardado.scss";
+import "../../css/anuncio-guardado.css";
 
 const NuevoAnuncioGuardadoPage = () => {
   return (

@@ -1,9 +1,8 @@
 "use strict";
+
 require("@babel/register")({
   presets: ["@babel/preset-react"],
 });
-
-//require("./src/views/scss/base/colors.scss");
 
 const express = require("express");
 const path = require("path");
@@ -14,10 +13,7 @@ const NewAd = require("./src/models/newAd");
 
 const ReactDOMServer = require("react-dom/server");
 const React = require("react");
-//const Boton = require("./src/views/components/01_atoms/AnuncioBoton11.jsx");
-const AnuncioBoton11 = require("./src/views/components/01_atoms/AnuncioBoton11");
-//import { AnuncioBoton11 } from "./src/views/components/01_atoms/AnuncioBoton11";
-
+const PageSSR = require("./src/views/components/01_atoms/PageSSR");
 //const __dirname = path.resolve();
 
 let app = express();
@@ -26,13 +22,8 @@ let app = express();
 app.use(bodyParser.urlencoded({ extended: false }));
 app.use(bodyParser.json());
 
-//app.get("/", (req, res) => res.send("HELLO FROM EXPRESS Y Fazt"));
-/*app.get("/mis-anuncios", (req, res) => {
-  console.log("entraron a mis-anuncios en URL");
-});*/
-
 app.get("/demo", (req, res) => {
-  var html = ReactDOMServer.renderToString(React.createElement(AnuncioBoton11));
+  var html = ReactDOMServer.renderToString(React.createElement(PageSSR));
   res.send(html);
 });
 
@@ -84,6 +75,14 @@ app.get("/prueba", (req, res) => {
  * Esta función me salvó la vida, jajaj!
  */
 app.get("/*", function (req, res) {
+  res.sendFile(path.join(__dirname, "public/index.html"), function (err) {
+    if (err) {
+      res.status(500).send(err);
+    }
+  });
+});
+
+app.get("/mis-anuncios", function (req, res) {
   res.sendFile(path.join(__dirname, "public/index.html"), function (err) {
     if (err) {
       res.status(500).send(err);

@@ -1,6 +1,6 @@
 import React from "react";
 import NuevoAnuncioSection from "../04_templates/NuevoAnuncioSection";
-import "../../scss/pages/anuncio-nuevo.scss";
+import "../../css/anuncio-nuevo.css";
 
 const NuevoAnuncioPage = () => {
   return (
