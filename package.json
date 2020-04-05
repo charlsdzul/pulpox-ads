@@ -5,7 +5,8 @@
   "main": "index.js",
   "scripts": {
     "start": "server.js",
-    "dev": "concurrently \"node --experimental-modules server.js\" \"webpack -w --mode development\""
+    "dev": "concurrently \"node --experimental-modules server.js\" \"webpack -w --mode development\"",
+    "build-css": "node-sass colors.scss scss/base/colors.scss --importer node_modules/node-sass-import"
   },
   "repository": {
     "type": "git",
@@ -28,11 +29,11 @@
     "@babel/preset-env": "^7.9.0",
     "@babel/preset-react": "^7.9.4",
     "babel-loader": "^8.1.0",
+    "babel-plugin-component-scss": "^1.1.2",
     "concurrently": "^5.1.0",
     "css-loader": "^3.4.2",
     "express": "^4.17.1",
     "node-sass": "^4.13.1",
-    "nodemon": "^2.0.2",
     "sass-loader": "^8.0.2",
     "style-loader": "^1.1.3",
     "webpack": "^4.42.1",

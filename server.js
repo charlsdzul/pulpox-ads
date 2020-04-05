@@ -1,9 +1,23 @@
+"use strict";
+require("@babel/register")({
+  presets: ["@babel/preset-react"],
+});
+
+//require("./src/views/scss/base/colors.scss");
+
 const express = require("express");
 const path = require("path");
 const session = require("express-session");
 const moongose = require("mongoose");
 const bodyParser = require("body-parser");
 const NewAd = require("./src/models/newAd");
+
+const ReactDOMServer = require("react-dom/server");
+const React = require("react");
+//const Boton = require("./src/views/components/01_atoms/AnuncioBoton11.jsx");
+const AnuncioBoton11 = require("./src/views/components/01_atoms/AnuncioBoton11");
+//import { AnuncioBoton11 } from "./src/views/components/01_atoms/AnuncioBoton11";
+
 //const __dirname = path.resolve();
 
 let app = express();
@@ -16,6 +30,11 @@ app.use(bodyParser.json());
 /*app.get("/mis-anuncios", (req, res) => {
   console.log("entraron a mis-anuncios en URL");
 });*/
+
+app.get("/demo", (req, res) => {
+  var html = ReactDOMServer.renderToString(React.createElement(AnuncioBoton11));
+  res.send(html);
+});
 
 app.use(express.static(__dirname + "/public"));
 
@@ -46,7 +65,7 @@ app.use(
   session({
     secret: "keyboard cat",
     resave: false,
-    saveUninitialized: true
+    saveUninitialized: true,
   })
 );
 
@@ -64,8 +83,8 @@ app.get("/prueba", (req, res) => {
  * Si no está definido, al entrar directamente a una URL, marcará error porque express no tiene definido tal ruta.
  * Esta función me salvó la vida, jajaj!
  */
-app.get("/*", function(req, res) {
-  res.sendFile(path.join(__dirname, "public/index.html"), function(err) {
+app.get("/*", function (req, res) {
+  res.sendFile(path.join(__dirname, "public/index.html"), function (err) {
     if (err) {
       res.status(500).send(err);
     }

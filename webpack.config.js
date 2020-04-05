@@ -3,7 +3,7 @@ module.exports = {
   output: {
     path: __dirname + "/public/js/",
     filename: "bundle.js",
-    publicPath: "/"
+    publicPath: "/",
   },
   resolve: { extensions: ["*", ".js", ".jsx", ".scss"] },
 
@@ -14,29 +14,30 @@ module.exports = {
         exclude: /node_modules/,
         use: {
           loader: "babel-loader",
-          options: { presets: ["@babel/preset-env"] }
-        }
+          options: { presets: ["@babel/preset-env"] },
+        },
       },
       {
         test: /\.css$/i,
-        use: ["style-loader", "css-loader"]
+        use: ["style-loader", "css-loader"],
       },
       {
         test: /\.scss$/i,
         use: [
           "style-loader",
           "css-loader",
+          "sass-loader",
           {
             loader: "sass-loader",
             options: {
-              implementation: require("node-sass")
-            }
-          }
-        ]
-      }
-    ]
+              implementation: require("node-sass"),
+            },
+          },
+        ],
+      },
+    ],
   },
   devServer: {
-    historyApiFallback: true
-  }
+    historyApiFallback: true,
+  },
 };

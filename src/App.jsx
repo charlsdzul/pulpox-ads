@@ -12,7 +12,7 @@ import { Provider } from "react-redux";
 import store from "./views/components/reduxAnuncio/store";
 import Footer from "./views/components/03_organisms/Footer";
 const App = () => {
-  const setSectionHeight = () => event => {
+  const setSectionHeight = () => (event) => {
     var h = window.innerHeight;
     console.log(h);
     event.currentTarget.style.height = h * 0.9 + "px";

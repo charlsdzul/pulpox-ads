@@ -1,0 +1,171 @@
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  font-family: lato;
+}
+
+a {
+  text-decoration: none;
+}
+
+img {
+  max-width: 100%;
+}
+
+li {
+  list-style: none;
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  font-family: lato;
+}
+
+a {
+  text-decoration: none;
+}
+
+img {
+  max-width: 100%;
+}
+
+li {
+  list-style: none;
+}
+
+.header {
+  background-color: #a30036;
+}
+
+.navbar {
+  margin-left: 2em;
+  margin-right: 2em;
+}
+
+.header-banner__logo {
+  color: white;
+}
+
+.header-menu {
+  margin-left: 5em;
+  width: auto;
+  font-style: normal;
+  font-family: "Lato", sans-serif;
+  display: flex;
+  justify-content: flex-end;
+}
+
+.header-menu__group {
+  text-align: right;
+}
+
+.header-menu__li {
+  border-radius: 2px;
+  width: auto;
+  color: white;
+}
+
+.header-menu__li--hover:hover {
+  background-color: #a35200;
+}
+
+.header-menu__button {
+  background-color: #a30036;
+  border-style: none;
+  border-radius: 2px;
+}
+
+.header-menu__submenu {
+  background-color: #a35200;
+}
+
+.header-menu__submenu__a {
+  color: white;
+}
+
+.header-menu__submenu__a--hover:hover {
+  color: #a35200;
+}
+
+.titulo-page-div {
+  max-width: 40%;
+  height: auto;
+  margin: auto;
+  margin-top: 0.5em;
+  font-size: 1.2em;
+  color: #a30036;
+  text-align: center;
+}
+
+.anuncio-guardado-div {
+  /*background-color: pink;*/
+  width: 100%;
+}
+
+.anuncio-guardado-div__nuevo {
+  /* border: 1px solid orange;*/
+  width: 100%;
+  margin: auto;
+  margin-top: 1em;
+}
+
+.anuncio-guardado-div__titulo {
+  max-width: 40em;
+  height: auto;
+  margin: auto;
+  margin-top: 0.5em;
+}
+
+.anuncio-guardado-div__mensaje {
+  max-width: 40em;
+  min-height: 20em;
+  height: auto;
+  margin: auto;
+  margin-top: 0.5em;
+  border: 1px solid lightgrey;
+  border-radius: 2px;
+  padding: 0.3em;
+}
+
+.anuncio-guardado-div__datos {
+  max-width: 40em;
+  width: 100%;
+  height: auto;
+  margin: auto;
+  margin-top: 0.5em;
+}
+
+.div-buttons {
+  max-width: 40em;
+  height: auto;
+  margin: auto;
+  margin-top: 0.5em;
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+.div-buttons__button {
+  background-color: #a30036;
+  border-radius: 2px;
+  border-style: none;
+  color: white;
+  width: 6em;
+}
+
+.anuncio-guardado-div__span {
+  font-size: 1em;
+  color: gray;
+  font-style: italic;
+}
