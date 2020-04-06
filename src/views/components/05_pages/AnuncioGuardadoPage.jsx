@@ -2,7 +2,7 @@ import React from "react";
 import NuevoAnuncioGuardadoSection from "../04_templates/NuevoAnuncioGuardadoSection";
 import "../../css/anuncio-guardado.css";
 
-const NuevoAnuncioGuardadoPage = () => {
+const AnuncioGuardadoPage = () => {
   return (
     <main>
       <div className="titulo-page-div">
@@ -13,4 +13,4 @@ const NuevoAnuncioGuardadoPage = () => {
   );
 };
 
-export default NuevoAnuncioGuardadoPage;
+export default AnuncioGuardadoPage;

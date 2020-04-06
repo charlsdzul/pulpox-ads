@@ -1,10 +1,10 @@
 import React from "react";
 import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
 
-import HomePage from "./views/components/05_pages/HomePage";
+import InicioPage from "./views/components/05_pages/InicioPage";
 import MisAnunciosPage from "./views/components/05_pages/MisAnunciosPage";
-import NuevoAnuncioPage from "./views/components/05_pages/NuevoAnuncioPage";
-import NuevoAnuncioGuardadoPage from "./views/components/05_pages/NuevoAnuncioGuardadoPage";
+import AnuncioNuevoPage from "./views/components/05_pages/AnuncioNuevoPage";
+import AnuncioGuardadoPage from "./views/components/05_pages/AnuncioGuardadoPage";
 
 //import "./views/scss/base/config.scss";
 import Header from "./views/components/03_organisms/Header";
@@ -24,13 +24,13 @@ const App = () => {
         <Router>
           <Header />
           <Switch>
-            <Route path="/" exact component={HomePage} />
+            <Route path="/" exact component={InicioPage} />
             <Route path="/mis-anuncios/" exact component={MisAnunciosPage} />
-            <Route path="/anuncio-nuevo/" exact component={NuevoAnuncioPage} />
+            <Route path="/anuncio-nuevo/" exact component={AnuncioNuevoPage} />
             <Route
               path="/anuncio-guardado/"
               exact
-              component={NuevoAnuncioGuardadoPage}
+              component={AnuncioGuardadoPage}
             />
           </Switch>
           <Footer />

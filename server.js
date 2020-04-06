@@ -10,6 +10,8 @@ const session = require("express-session");
 const moongose = require("mongoose");
 const bodyParser = require("body-parser");
 const NewAd = require("./src/models/newAd");
+const fileUpload = require("express-fileupload");
+const fs = require("fs");
 
 const ReactDOMServer = require("react-dom/server");
 const React = require("react");
@@ -21,36 +23,7 @@ let app = express();
 //Middlewares. Todo lo que sea HTTP, pasa por estas capas!
 app.use(bodyParser.urlencoded({ extended: false }));
 app.use(bodyParser.json());
-
-app.get("/demo", (req, res) => {
-  var html = ReactDOMServer.renderToString(React.createElement(PageSSR));
-  res.send(html);
-});
-
 app.use(express.static(__dirname + "/public"));
-
-app.post("/api/new-ad", (req, res) => {
-  let new_ad = new NewAd();
-  new_ad.titulo = req.body.titulo;
-  new_ad.mensaje = req.body.mensaje;
-  new_ad.estado = req.body.estado;
-  new_ad.ciudad = req.body.ciudad;
-  new_ad.seccion = req.body.seccion;
-  new_ad.apartado = req.body.apartado;
-  new_ad.telefono = req.body.telefono;
-  new_ad.celular = req.body.celular;
-  new_ad.correo = req.body.correo;
-
-  new_ad.save((err, new_adStored) => {
-    if (err) {
-      res
-        .status(500)
-        .send(`Ha ocurrido un error al guardar su anuncio: ${err}`);
-    } else {
-      res.status(200).send(new_adStored);
-    }
-  });
-});
 
 app.use(
   session({
@@ -74,6 +47,58 @@ app.get("/prueba", (req, res) => {
  * Si no está definido, al entrar directamente a una URL, marcará error porque express no tiene definido tal ruta.
  * Esta función me salvó la vida, jajaj!
  */
+app.use(
+  fileUpload({
+    useTempFiles: true,
+    tempFileDir: "/tmp/",
+  })
+);
+
+app.post("/api/upload-image", (req, res) => {
+  let incomigImage = req.files.image;
+
+  //Size Validation
+  if (incomigImage.size <= 10000000) {
+    console.log("TAMAÑO DE IMAGEN SÍ ES MENOR A 10 MB :) ");
+  } else {
+    console.log("TAMAÑO DE IMAGEN ES MAYOR A 10 MB :() ");
+  }
+
+  console.log(incomigImage);
+  console.log(incomigImage.size);
+
+  let incomigImageName = req.files.image.name;
+
+  const pathNew = path.join(__dirname, `public/up/${incomigImageName}`);
+
+  if (fs.existsSync(pathNew)) {
+    console.log("el archivo ya existe");
+  } else {
+    console.log("El archivo no existe");
+    incomigImage.mv(
+      path.join(__dirname, `public/up/${incomigImageName}`),
+      function (err) {
+        if (err) return res.status(500).send(err);
+
+        res.send("File uploaded!");
+      }
+    );
+  }
+});
+
+app.get("/mis-anuncios", function (req, res) {
+  res.sendFile(path.join(__dirname, "public/index.html"), function (err) {
+    if (err) {
+      res.status(500).send(err);
+    }
+  });
+});
+
+app.get("/demo", (req, res) => {
+  var html = ReactDOMServer.renderToString(React.createElement(PageSSR));
+  res.send(html);
+});
+
 app.get("/*", function (req, res) {
   res.sendFile(path.join(__dirname, "public/index.html"), function (err) {
     if (err) {
@@ -82,10 +107,25 @@ app.get("/*", function (req, res) {
   });
 });
 
-app.get("/mis-anuncios", function (req, res) {
-  res.sendFile(path.join(__dirname, "public/index.html"), function (err) {
+app.post("/api/new-ad", (req, res) => {
+  let new_ad = new NewAd();
+  new_ad.titulo = req.body.titulo;
+  new_ad.mensaje = req.body.mensaje;
+  new_ad.estado = req.body.estado;
+  new_ad.ciudad = req.body.ciudad;
+  new_ad.seccion = req.body.seccion;
+  new_ad.apartado = req.body.apartado;
+  new_ad.telefono = req.body.telefono;
+  new_ad.celular = req.body.celular;
+  new_ad.correo = req.body.correo;
+
+  new_ad.save((err, new_adStored) => {
     if (err) {
-      res.status(500).send(err);
+      res
+        .status(500)
+        .send(`Ha ocurrido un error al guardar su anuncio: ${err}`);
+    } else {
+      res.status(200).send(new_adStored);
     }
   });
 });

@@ -2,7 +2,7 @@ import React from "react";
 import NuevoAnuncioSection from "../04_templates/NuevoAnuncioSection";
 import "../../css/anuncio-nuevo.css";
 
-const NuevoAnuncioPage = () => {
+const AnuncioNuevoPage = () => {
   return (
     <main>
       <div className="titulo-page-div">
@@ -13,4 +13,4 @@ const NuevoAnuncioPage = () => {
   );
 };
 
-export default NuevoAnuncioPage;
+export default AnuncioNuevoPage;

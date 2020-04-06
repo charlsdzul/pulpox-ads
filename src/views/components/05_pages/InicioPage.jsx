@@ -1,7 +1,7 @@
 import React from "react";
 import InicioSection from "../04_templates/InicioSection";
 
-const Home = () => {
+const InicioPage = () => {
   return (
     <main>
       <div className="titulo-page-div">
@@ -12,4 +12,4 @@ const Home = () => {
   );
 };
 
-export default Home;
+export default InicioPage;
