@@ -5,6 +5,7 @@
   "main": "index.js",
   "scripts": {
     "start": "server.js",
+    "start11": "node server.js",
     "dev": "concurrently \"node --experimental-modules server.js\" \"webpack -w --mode development\"",
     "build-css": "node-sass colors.scss scss/base/colors.scss --importer node_modules/node-sass-import"
   },
