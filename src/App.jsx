@@ -25,10 +25,10 @@ const App = () => {
           <Header />
           <Switch>
             <Route path="/" exact component={InicioPage} />
-            <Route path="/mis-anuncios/" exact component={MisAnunciosPage} />
-            <Route path="/anuncio-nuevo/" exact component={AnuncioNuevoPage} />
+            <Route path="/mis-anuncios" exact component={MisAnunciosPage} />
+            <Route path="/anuncio-nuevo" exact component={AnuncioNuevoPage} />
             <Route
-              path="/anuncio-guardado/"
+              path="/anuncio-guardado"
               exact
               component={AnuncioGuardadoPage}
             />
