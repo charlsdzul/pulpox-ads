@@ -148,3 +148,5 @@ moongose.connect(
     }
   }
 );
+
+app.listen(3000, () => console.log("Servidor en linea: http://localhost:3000"));
