@@ -1,5 +1,7 @@
 "use strict";
 
+const PORT = process.env.PORT || 3000;
+
 require("@babel/register")({
   presets: ["@babel/preset-react"],
 });
@@ -151,4 +153,4 @@ moongose.connect(
 );
 */
 
-app.listen(3000, () => console.log("Servidor en linea: http://localhost:3000"));
+app.listen(PORT, () => console.log("Servidor en linea: http://localhost:3000"));
