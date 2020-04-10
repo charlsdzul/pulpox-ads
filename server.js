@@ -130,6 +130,7 @@ app.post("/api/new-ad", (req, res) => {
   });
 });
 
+/*
 moongose.connect(
   "mongodb://localhost:27017/pulpox_ads",
   { useNewUrlParser: true },
@@ -148,5 +149,6 @@ moongose.connect(
     }
   }
 );
+*/
 
 app.listen(3000, () => console.log("Servidor en linea: http://localhost:3000"));
