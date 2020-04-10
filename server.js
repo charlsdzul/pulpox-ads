@@ -1,6 +1,8 @@
 "use strict";
 
 const PORT = process.env.PORT || 3000;
+const MONGODB_URI =
+  process.env.MONGODB_URI || "mongodb://localhost:27017/pulpox_ads";
 
 require("@babel/register")({
   presets: ["@babel/preset-react"],
@@ -132,25 +134,21 @@ app.post("/api/new-ad", (req, res) => {
   });
 });
 
-/*
-moongose.connect(
-  "mongodb://localhost:27017/pulpox_ads",
-  { useNewUrlParser: true },
-  (err, res) => {
-    if (err) {
-      console.log(
-        `Hubo un error al conectar a la base de datos Mongoose: ${err}`
-      );
-    } else {
-      console.log("Conexión a bade de datos Mongoose establecida :)");
+moongose.connect(MONGODB_URI, { useNewUrlParser: true }, (err, res) => {
+  if (err) {
+    console.log(
+      `Hubo un error al conectar a la base de datos Mongoose: ${err}`
+    );
+  } else {
+    console.log("Conexión a bade de datos Mongoose establecida :)");
 
-      //Si la conexión a bdd es exitosa, levantar servidor.
-      app.listen(3000, () =>
-        console.log("Servidor en linea: http://localhost:3000")
-      );
-    }
+    //Si la conexión a bdd es exitosa, levantar servidor.
+    app.listen(3000, () =>
+      console.log(`Servidor en linea: http://localhost:${PORT}`)
+    );
   }
-);
-*/
+});
 
-app.listen(PORT, () => console.log("Servidor en linea: http://localhost:3000"));
+app.listen(PORT, () =>
+  console.log(`Servidor en linea: http://localhost:${PORT}`)
+);
